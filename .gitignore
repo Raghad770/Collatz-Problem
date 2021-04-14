@@ -30,3 +30,39 @@
 *.exe
 *.out
 *.app
+#include <iostream>
+using namespace std;
+int main()
+{
+	int s;
+	cin >> s;
+	int a[1000];
+	 
+	a[0] = s;
+	int n = 1;
+	int i = 0;
+	int min = 9809;
+	bool found = false;
+	int countO = 0;
+
+	while (!found) {
+		n=a[i];
+		i++;
+		if (n % 2 == 0)
+			a[i] = n / 2;
+		else
+			a[i] = 3 * n + 1;
+
+		for (int j = 0; j <=i; j++) {
+			for (int k = j+1; k <=i; k++) {
+				if (a[j] == a[k]) {
+					countO = countO + 1;
+					found = true;
+				}
+			}
+				
+		}
+		
+	}
+	cout << i + 1<<endl;
+}
